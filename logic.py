@@ -1,12 +1,15 @@
-from random import random
+import random
 
 
 def generate_puzzle():
     puzzle = list(range(9))
+    puzzle_matrix = [[0 for i in range(3)] for j in range(3)]
     random.shuffle(puzzle)
     if not is_solvable(puzzle):
         return generate_puzzle()
-    return puzzle
+    for i in range(9):
+        puzzle_matrix[i // 3][i % 3] = puzzle[i]
+    return puzzle_matrix
 
 def is_solvable(puzzle):
     inversions = 0
