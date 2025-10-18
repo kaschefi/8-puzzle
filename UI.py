@@ -1,5 +1,6 @@
 from tkinter import *
-from logic import generate_puzzle  # your function to get puzzle state, e.g. [[0,1,2],[3,4,5],[6,7,8]]
+from logic import generate_puzzle, puzzle_to_tuple
+from manhattan import *
 
 class PuzzleUI(Tk):
     def __init__(self):
@@ -50,16 +51,44 @@ class PuzzleUI(Tk):
                 label.grid(row=r, column=c, padx=2, pady=2)
                 self.tiles.append(label)
 
-    # --- Button Commands (placeholder) ---
+    # --- NEW METHOD: update the UI based on self.puzzle ---
+    def update_puzzle_ui(self):
+        for r in range(3):
+            for c in range(3):
+                val = self.puzzle[r][c]
+                label = self.tiles[r * 3 + c]
+                label.config(text=str(val) if val != 0 else "",
+                             bg="white" if val == 0 else "#42b8ff")
+
+    # --- Button Commands ---
     def solve_manhattan(self):
         print("Solving with Manhattan distance...")
+
+        # Compute the solution path (list of puzzle states)
+        path = solve_with_manhattan(self.puzzle)
+        step_index = 0
+
+        def show_next_step():
+            nonlocal step_index
+            if step_index >= len(path):
+                print("Animation finished.")
+                return
+
+            # Update puzzle and refresh UI
+            self.puzzle = path[step_index]
+            self.update_puzzle_ui()
+            step_index += 1
+
+            # Schedule next step after 1 second
+            self.after(200, show_next_step)
+
+        show_next_step()
 
     def solve_100(self):
         print("Solving 100 times...")
 
     def solve_hamming(self):
         print("Solving with Hamming distance...")
-
 
 if __name__ == "__main__":
     app = PuzzleUI()
