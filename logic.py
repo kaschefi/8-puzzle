@@ -1,3 +1,4 @@
+import copy
 import random
 
 
@@ -19,3 +20,56 @@ def is_solvable(puzzle):
             if temp[i] > temp[j]:
                 inversions += 1
     return inversions % 2 == 0
+
+def move_up(puzzle):
+    for i in range(len(puzzle)):
+        for j in range(len(puzzle[i])):
+            if puzzle[i][j] == 0:
+                continue
+            if i > 0 and puzzle[i - 1][j] == 0:
+                puzzle[i][j], puzzle[i - 1][j] = puzzle[i - 1][j], puzzle[i][j]
+                return puzzle
+    return puzzle
+
+def move_down(puzzle):
+    for i in reversed(range(len(puzzle))):
+        for j in reversed(range(len(puzzle[i]))):
+            if puzzle[i][j] == 0:
+                continue
+            if i < 2 and puzzle[i + 1][j] == 0:
+                puzzle[i][j], puzzle[i + 1][j] = puzzle[i + 1][j], puzzle[i][j]
+                return puzzle
+    return puzzle
+
+def move_left(puzzle):
+    for i in range(len(puzzle)):
+        for j in range(len(puzzle[i])):
+            if puzzle[i][j] == 0:
+                continue
+            if j > 0 and puzzle[i][j - 1] == 0:
+                puzzle[i][j], puzzle[i][j - 1] = puzzle[i][j - 1], puzzle[i][j]
+                return puzzle
+    return puzzle
+
+def move_right(puzzle):
+    for i in reversed(range(len(puzzle))):
+        for j in reversed(range(len(puzzle[i]))):
+            if puzzle[i][j] == 0:
+                continue
+            if j < 2 and puzzle[i][j + 1] == 0:
+                puzzle[i][j], puzzle[i][j + 1] = puzzle[i][j + 1], puzzle[i][j]
+                return puzzle
+    return puzzle
+
+def puzzle_to_tuple(puzzle):
+    return tuple(num for row in puzzle for num in row)
+
+def possible_moves(puzzle, visited):
+    moves = []
+    for move_func, name in [(move_up, "up"), (move_down, "down"),
+                            (move_left, "left"), (move_right, "right")]:
+        new_puzzle = move_func(copy.deepcopy(puzzle))
+        t = puzzle_to_tuple(new_puzzle)
+        if new_puzzle != puzzle and t not in visited:
+            moves.append((name, new_puzzle))
+    return moves
