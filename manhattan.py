@@ -1,4 +1,4 @@
-from logic import *
+from astar import *
 
 def calculate_manhattan_value(puzzle):
     value = 0

@@ -17,7 +17,7 @@ class PuzzleUI(Tk):
         self.puzzle_frame = Frame(self, bg="#eaeaea")
         self.puzzle_frame.pack(pady=10)
 
-        # Load puzzle from logic.py
+        # Load puzzle from astar.py
         self.puzzle = generate_puzzle()
         self.tiles = []
         self.draw_puzzle()
