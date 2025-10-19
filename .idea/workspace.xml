@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e79a545-5707-4823-906c-cd6b17f2f5e0" name="Changes" comment="adding regenerate puzzle btn to ui.py">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/astar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manhattan.py" beforeDir="false" afterPath="$PROJECT_DIR$/manhattan.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;kaschefi&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kaschefi/8-puzzle.git&quot;,
+    &quot;accountId&quot;: &quot;8a8a9245-64de-4283-b4ff-673ffd8f1332&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33BwmU1vopV2tVxpluVta5RYGxs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.UI.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11 (8-puzzle)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\mkrad\PycharmProjects\8-puzzle\main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.26830.99" />
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e79a545-5707-4823-906c-cd6b17f2f5e0" name="Changes" comment="" />
+      <created>1758803932040</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758803932040</updated>
+      <workItem from="1758803933093" duration="2794000" />
+      <workItem from="1760367012341" duration="44000" />
+      <workItem from="1760367228990" duration="610000" />
+      <workItem from="1760368401044" duration="625000" />
+      <workItem from="1760541385411" duration="2719000" />
+      <workItem from="1760544354564" duration="851000" />
+      <workItem from="1760546996899" duration="483000" />
+      <workItem from="1760605825707" duration="1600000" />
+      <workItem from="1760615631355" duration="264000" />
+      <workItem from="1760700648478" duration="143000" />
+      <workItem from="1760785011656" duration="7838000" />
+      <workItem from="1760800186109" duration="3068000" />
+      <workItem from="1760823747326" duration="2360000" />
+      <workItem from="1760860266727" duration="701000" />
+      <workItem from="1760872686627" duration="560000" />
+      <workItem from="1760873319508" duration="1184000" />
+    </task>
+    <task id="LOCAL-00001" summary="writing the purpose of this project in README.md">
+      <option name="closed" value="true" />
+      <created>1758807767399</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758807767399</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adding generate_puzzle and is_solvable functions in logic.py">
+      <option name="closed" value="true" />
+      <created>1760543974313</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1760543974313</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first basic ui for home page">
+      <option name="closed" value="true" />
+      <created>1760610256712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1760610256712</updated>
+    </task>
+    <task id="LOCAL-00004" summary="possible moves and moving in each direction are added to logic.py&#10;manhattan.py is added but it is yet not working in the ui and its just the logic">
+      <option name="closed" value="true" />
+      <created>1760795341581</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1760795341581</updated>
+    </task>
+    <task id="LOCAL-00005" summary="correcting the structure of files">
+      <option name="closed" value="true" />
+      <created>1760860694248</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760860694248</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adding regenerate puzzle btn to ui.py">
+      <option name="closed" value="true" />
+      <created>1760873993884</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760873993884</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="writing the purpose of this project in README.md" />
+    <MESSAGE value="adding generate_puzzle and is_solvable functions in logic.py" />
+    <MESSAGE value="first basic ui for home page" />
+    <MESSAGE value="possible moves and moving in each direction are added to logic.py&#10;manhattan.py is added but it is yet not working in the ui and its just the logic" />
+    <MESSAGE value="correcting the structure of files" />
+    <MESSAGE value="adding regenerate puzzle btn to ui.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding regenerate puzzle btn to ui.py" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/8_puzzle$UI.coverage" NAME="UI Coverage Results" MODIFIED="1760873887457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
