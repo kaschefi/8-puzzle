@@ -1,6 +1,8 @@
 from tkinter import *
 from manhattan import *
 
+delay = 300
+
 class PuzzleUI(Tk):
     def __init__(self):
         super().__init__()
@@ -83,7 +85,7 @@ class PuzzleUI(Tk):
             step_index += 1
 
             # Schedule next step
-            self.after(200, show_next_step)
+            self.after(delay, show_next_step)
 
         show_next_step()
 
