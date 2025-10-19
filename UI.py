@@ -1,5 +1,4 @@
 from tkinter import *
-from logic import generate_puzzle, puzzle_to_tuple
 from manhattan import *
 
 class PuzzleUI(Tk):
@@ -38,6 +37,10 @@ class PuzzleUI(Tk):
         Button(btn_frame, text="solve with hamming distance",
                font=("Arial", 12), bg="#d9d9d9", relief="flat",
                width=25, height=2, command=self.solve_hamming).grid(row=0, column=2, padx=10)
+
+        Button(btn_frame, text="regenerate puzzle",
+               font=("Arial", 12), bg="#d9d9d9", relief="flat",
+               width=25, height=2, command=self.regenerate_puzzle).grid(row=1, column=1, padx=10, pady=10)
 
     def draw_puzzle(self):
         """Draws the 3x3 grid based on self.puzzle."""
@@ -79,7 +82,7 @@ class PuzzleUI(Tk):
             self.update_puzzle_ui()
             step_index += 1
 
-            # Schedule next step after 1 second
+            # Schedule next step
             self.after(200, show_next_step)
 
         show_next_step()
@@ -89,6 +92,11 @@ class PuzzleUI(Tk):
 
     def solve_hamming(self):
         print("Solving with Hamming distance...")
+
+    def regenerate_puzzle(self):
+        print("Regenerating puzzle...")
+        self.puzzle = generate_puzzle()
+        self.update_puzzle_ui()
 
 if __name__ == "__main__":
     app = PuzzleUI()
