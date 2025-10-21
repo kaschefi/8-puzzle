@@ -56,7 +56,7 @@ class PuzzleUI(Tk):
                 label.grid(row=r, column=c, padx=2, pady=2)
                 self.tiles.append(label)
 
-    # --- NEW METHOD: update the UI based on self.puzzle ---
+    # update the UI based on self.puzzle
     def update_puzzle_ui(self):
         for r in range(3):
             for c in range(3):
@@ -65,7 +65,7 @@ class PuzzleUI(Tk):
                 label.config(text=str(val) if val != 0 else "",
                              bg="white" if val == 0 else "#42b8ff")
 
-    # --- Button Commands ---
+    #  Button Commands
     def solve_manhattan(self):
         print("Solving with Manhattan distance...")
 

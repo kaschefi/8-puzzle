@@ -18,3 +18,22 @@ with hamming distance
 
 # Usage
 to start the program run the main.py file 
+
+# Manhattan Distance
+in function calculate_manhattan_value we go throw the 
+puzzle and calculate the manhattan distance for each 
+tile and we do it using divmod method to get the 
+remainder and the quotient, if you think about it 
+the manhattan distance is the sum of the remainder
+and the quotient minus current location ,lets say 8 is in place on 1 so 8/3 = 2
+and 8%3 = 2 now -> 2 + 2 = 4 -> 4 - 1 + 0 = 3
+where 1 is i and 0 is j 
+
+# astar
+## solvable
+a puzzle is solvable when inversion is a even number 
+An inversion occurs when a larger-numbered tile precedes a 
+smaller-numbered tile in the puzzle’s linear (flattened) form
+ ignoring the blank (0 or space).
+example: 321 456 789 
+inversion is 2

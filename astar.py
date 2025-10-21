@@ -1,9 +1,12 @@
 import copy
 import heapq
 import random
-
+import time
 
 def generate_puzzle():
+    # no Input
+    # output: a random puzzle matrix as a list
+    # Function: generate a random puzzle matrix
     puzzle = list(range(9))
     puzzle_matrix = [[0 for i in range(3)] for j in range(3)]
     random.shuffle(puzzle)
@@ -14,6 +17,10 @@ def generate_puzzle():
     return puzzle_matrix
 
 def is_solvable(puzzle):
+    # Input: puzzle
+    # output: True if solvable, False otherwise
+    # Function: check if the puzzle is solvable using inversion value
+    # find the detail on inversion value in README.md under astar, solvable
     inversions = 0
     temp = [num for num in puzzle if num != 0]  # ignore blank
     for i in range(len(temp)):
@@ -23,6 +30,9 @@ def is_solvable(puzzle):
     return inversions % 2 == 0
 
 def move_up(puzzle):
+    # Input: puzzle
+    # output: puzzle after moving up
+    # Function: move up the blank tile
     for i in range(len(puzzle)):
         for j in range(len(puzzle[i])):
             if puzzle[i][j] == 0:
@@ -33,6 +43,9 @@ def move_up(puzzle):
     return puzzle
 
 def move_down(puzzle):
+    # Input: puzzle
+    # output: puzzle after moving down
+    # Function: move down the blank tile
     for i in reversed(range(len(puzzle))):
         for j in reversed(range(len(puzzle[i]))):
             if puzzle[i][j] == 0:
@@ -43,6 +56,9 @@ def move_down(puzzle):
     return puzzle
 
 def move_left(puzzle):
+    # Input: puzzle
+    # output: puzzle after moving left
+    # Function: move left the blank tile
     for i in range(len(puzzle)):
         for j in range(len(puzzle[i])):
             if puzzle[i][j] == 0:
@@ -53,6 +69,9 @@ def move_left(puzzle):
     return puzzle
 
 def move_right(puzzle):
+    # Input: puzzle
+    # output: puzzle after moving right
+    # Function: move right the blank tile
     for i in reversed(range(len(puzzle))):
         for j in reversed(range(len(puzzle[i]))):
             if puzzle[i][j] == 0:
@@ -63,9 +82,16 @@ def move_right(puzzle):
     return puzzle
 
 def puzzle_to_tuple(puzzle):
+    # Input: puzzle
+    # output: puzzle converted to tuple
+    # Function: convert puzzle to tuple
     return tuple(num for row in puzzle for num in row)
 
 def possible_moves(puzzle, visited):
+    # Input: puzzle, a list of visited puzzle
+    # output: a list of possible moves
+    # Function: it checks if puzzle have changes after moving up, down, left, right
+    # and it is not in visited before
     moves = []
     for move_func, name in [(move_up, "up"), (move_down, "down"),
                             (move_left, "left"), (move_right, "right")]:
@@ -76,11 +102,18 @@ def possible_moves(puzzle, visited):
     return moves
 
 def next_move(frontier):
-    """Select and return the node with the smallest f(n) = g + h."""
+    #Input: frontier
+    #output: node with the smallest f(n) = g + h, and g
+    # Function: Select and return the node with the smallest f(n) = g + h.
     _, g, puzzle = heapq.heappop(frontier)
     return puzzle, g
 
 def solve_puzzle(puzzle, heuristic):
+    #input: unsolved puzzle, heuristic function
+    #output: full path (list of puzzles)
+    # Function: it make a heap to keep the lowes f(n) = g + h node and calls function next_move to
+    # select next node and sends it to possible_moves function to get possible moves and insert them to heap.
+    start_time = time.time()
     start = puzzle_to_tuple(puzzle)
     goal = (0, 1, 2, 3, 4, 5, 6, 7,8)
 
@@ -102,6 +135,8 @@ def solve_puzzle(puzzle, heuristic):
                 path.append([list(current_tuple[i:i + 3]) for i in range(0, 9, 3)])
                 current_tuple = came_from[current_tuple]
             path.reverse()
+            end = time.time()
+            print("It took", end - start_time, "seconds!")
             return path  # return full path (list of puzzles)
 
         for move_name, next_state in possible_moves(current, came_from):
