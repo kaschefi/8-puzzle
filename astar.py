@@ -10,14 +10,14 @@ def generate_puzzle():
     puzzle = list(range(9))
     puzzle_matrix = [[0 for i in range(3)] for j in range(3)]
     random.shuffle(puzzle)
-    if not is_solvable(puzzle):
-        return generate_puzzle()
+    while not is_solvable(puzzle):
+        random.shuffle(puzzle)
     for i in range(9):
         puzzle_matrix[i // 3][i % 3] = puzzle[i]
     return puzzle_matrix
 
 def is_solvable(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: True if solvable, False otherwise
     # Function: check if the puzzle is solvable using inversion value
     # find the detail on inversion value in README.md under astar, solvable
@@ -30,7 +30,7 @@ def is_solvable(puzzle):
     return inversions % 2 == 0
 
 def move_up(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: puzzle after moving up
     # Function: move up the blank tile
     for i in range(len(puzzle)):
@@ -43,7 +43,7 @@ def move_up(puzzle):
     return puzzle
 
 def move_down(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: puzzle after moving down
     # Function: move down the blank tile
     for i in reversed(range(len(puzzle))):
@@ -56,7 +56,7 @@ def move_down(puzzle):
     return puzzle
 
 def move_left(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: puzzle after moving left
     # Function: move left the blank tile
     for i in range(len(puzzle)):
@@ -69,7 +69,7 @@ def move_left(puzzle):
     return puzzle
 
 def move_right(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: puzzle after moving right
     # Function: move right the blank tile
     for i in reversed(range(len(puzzle))):
@@ -82,13 +82,14 @@ def move_right(puzzle):
     return puzzle
 
 def puzzle_to_tuple(puzzle):
-    # Input: puzzle
+    # Input: puzzle as a matrix
     # output: puzzle converted to tuple
     # Function: convert puzzle to tuple
+
     return tuple(num for row in puzzle for num in row)
 
 def possible_moves(puzzle, visited):
-    # Input: puzzle, a list of visited puzzle
+    # Input: puzzle as a matrix, a list of visited puzzle
     # output: a list of possible moves
     # Function: it checks if puzzle have changes after moving up, down, left, right
     # and it is not in visited before
@@ -109,7 +110,7 @@ def next_move(frontier):
     return puzzle, g
 
 def solve_puzzle(puzzle, heuristic):
-    #input: unsolved puzzle, heuristic function
+    #input: unsolved puzzle as a matrix, heuristic function
     #output: full path (list of puzzles)
     # Function: it make a heap to keep the lowes f(n) = g + h node and calls function next_move to
     # select next node and sends it to possible_moves function to get possible moves and insert them to heap.
@@ -121,13 +122,11 @@ def solve_puzzle(puzzle, heuristic):
     heapq.heappush(frontier, (heuristic(puzzle), 0, puzzle))
     came_from = {start: None}
     cost_so_far = {start: 0}
-    expanded = 0
-
+    nodes_expand = 0
     while frontier:
         current, g = next_move(frontier)
-        expanded += 1
         current_tuple = puzzle_to_tuple(current)
-
+        nodes_expand += 1
         if current_tuple == goal:
             print("Solved!")
             # reconstruct path
@@ -138,8 +137,8 @@ def solve_puzzle(puzzle, heuristic):
                 current_tuple = came_from[current_tuple]
             path.reverse()
             end = time.time()
-            print("It took", end - start_time, "seconds!")
-            return path, expanded, (end - start_time)  # return full path (list of puzzles)
+            print("It took", end - start_time, "seconds!" ", nodes expanded: ",nodes_expand,"")
+            return path,nodes_expand   # return full path (list of puzzles)
 
         for move_name, next_state in possible_moves(current, came_from):
             next_tuple = puzzle_to_tuple(next_state)
@@ -152,4 +151,4 @@ def solve_puzzle(puzzle, heuristic):
                 came_from[next_tuple] = current_tuple
 
     print("No solution found.")
-    return [],expanded, time.time() - start_time
+    return [],nodes_expand

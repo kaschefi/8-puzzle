@@ -80,13 +80,13 @@ class MainPage(Frame):
                              bg="white" if val == 0 else "#42b8ff")
 
     def solve_manhattan(self):
-        path, expanded, runtime = solve_with_manhattan(self.puzzle)
-        print(f"Solved with Manhattan. Nodes expanded: {expanded}, time: {runtime:.4f}s")
+        path, expanded= solve_with_manhattan(self.puzzle)
+        print(f"Solved with Manhattan. Nodes expanded: {expanded}")
         self.animate_solution(path)
 
     def solve_hamming(self):
-        path, expanded, runtime = solve_with_hamming(self.puzzle)
-        print(f"Solved with Hamming. Nodes expanded: {expanded}, time: {runtime:.4f}s")
+        path, expanded = solve_with_hamming(self.puzzle)
+        print(f"Solved with Hamming. Nodes expanded: {expanded}")
         self.animate_solution(path)
 
     def animate_solution(self, path):

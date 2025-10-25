@@ -26,7 +26,7 @@ tile and we do it using divmod method to get the
 remainder and the quotient, if you think about it 
 the manhattan distance is the sum of the remainder
 and the quotient minus current location ,lets say 8 is in place on 1 so 8/3 = 2
-and 8%3 = 2 now -> 2 + 2 = 4 -> 4 - 1 + 0 = 3
+and 8%3 = 2 now -> 2 + 2 = 4 -> 4 - 1 + 1 = 4
 where 1 is i and 0 is j 
 
 # astar
@@ -37,3 +37,7 @@ smaller-numbered tile in the puzzle’s linear (flattened) form
  ignoring the blank (0 or space).
 example: 321 456 789 
 inversion is 2
+## solve_puzzle 
+in here we use heapq which is a binary tree
+for which every parent node has a value less
+than or equal to any of its children.
