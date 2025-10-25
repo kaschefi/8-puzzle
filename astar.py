@@ -121,9 +121,11 @@ def solve_puzzle(puzzle, heuristic):
     heapq.heappush(frontier, (heuristic(puzzle), 0, puzzle))
     came_from = {start: None}
     cost_so_far = {start: 0}
+    expanded = 0
 
     while frontier:
         current, g = next_move(frontier)
+        expanded += 1
         current_tuple = puzzle_to_tuple(current)
 
         if current_tuple == goal:
@@ -137,7 +139,7 @@ def solve_puzzle(puzzle, heuristic):
             path.reverse()
             end = time.time()
             print("It took", end - start_time, "seconds!")
-            return path  # return full path (list of puzzles)
+            return path, expanded, (end - start_time)  # return full path (list of puzzles)
 
         for move_name, next_state in possible_moves(current, came_from):
             next_tuple = puzzle_to_tuple(next_state)
@@ -150,4 +152,4 @@ def solve_puzzle(puzzle, heuristic):
                 came_from[next_tuple] = current_tuple
 
     print("No solution found.")
-    return []
+    return [],expanded, time.time() - start_time
